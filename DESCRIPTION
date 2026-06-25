@@ -1,0 +1,20 @@
+Package: RcppOpenMP
+Title: Using OpenMP with Rcpp
+Version: 0.0.0.9000
+Authors@R:
+    person(given = "James",
+           family = "Balamuta",
+           role = c("aut", "cre"),
+           email = "balamut2@illinois.edu")
+Description: Provides an example of parallelizing a C++ routine with 'OpenMP'
+    directly inside an 'Rcpp' function.
+BugReports: https://github.com/coatless-rd-rcpp/rcpp-openmp/issues
+URL: https://github.com/coatless-rd-rcpp/rcpp-openmp, https://rd-rcpp.thecoatlessprofessor.com/rcpp-openmp/
+License: GPL (>= 2)
+Encoding: UTF-8
+LinkingTo:
+    Rcpp
+Imports:
+    Rcpp (>= 1.0.12)
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.0.0
