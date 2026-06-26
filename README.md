@@ -5,9 +5,9 @@
 <!-- badges: end -->
 
 The `RcppOpenMP` _R_ package provides an example of parallelizing a _C++_
-routine with [_OpenMP_](https://www.openmp.org/) directly inside an _Rcpp_
+routine with [_OpenMP_][openmp] directly inside an _Rcpp_
 function. It is the pure-_C++_ companion to
-[`rcpp-c-and-openmp`](https://github.com/coatless-rd-rcpp/rcpp-c-and-openmp),
+[`rcpp-c-and-openmp`][rcpp-c-and-openmp],
 which instead parallelizes a separate _C_ routine.
 
 ### Usage
@@ -15,9 +15,9 @@ which instead parallelizes a separate _C_ routine.
 To install the package, you must first have a compiler on your system that is
 compatible with R and that supports _OpenMP_. For help on obtaining a compiler
 consult either
-[macOS](http://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-os-x/)
+[macOS][compiler-macos]
 or
-[Windows](http://thecoatlessprofessor.com/programming/rcpp/install-rtools-for-rcpp/)
+[Windows][compiler-windows]
 guides.
 
 With a compiler in hand, one can then install the package from GitHub by:
@@ -112,7 +112,7 @@ PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS)
 
 Because the parallel `#pragma` lives in a `.cpp` file, the _C++_ flag
 `$(SHLIB_OPENMP_CXXFLAGS)` is the correct and sufficient choice here. The
-[`rcpp-c-and-openmp`](https://github.com/coatless-rd-rcpp/rcpp-c-and-openmp)
+[`rcpp-c-and-openmp`][rcpp-c-and-openmp]
 example places its directive in a `.c` file instead, so it additionally sets the
 matching `PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS)` for that translation unit
 alongside the _C++_ flag.
@@ -137,7 +137,7 @@ Surfacing the _C++_ code with _Rcpp_ requires `Rcpp` under both `LinkingTo` (for
 the headers used at compile time) and `Imports` (so it is available at run
 time).
 
-```
+```default
 LinkingTo:
     Rcpp
 Imports:
@@ -147,3 +147,8 @@ Imports:
 ## License
 
 GPL (\>= 2)
+
+[compiler-macos]: http://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-os-x/
+[compiler-windows]: http://thecoatlessprofessor.com/programming/rcpp/install-rtools-for-rcpp/
+[openmp]: https://www.openmp.org/
+[rcpp-c-and-openmp]: https://github.com/coatless-rd-rcpp/rcpp-c-and-openmp
